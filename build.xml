@@ -18,15 +18,15 @@
   <!-- Compile: compiles all Java files under the repository, excluding servlet classes (LoginServlet/SignUpServlet) -->
   <target name="compile" description="Compile java sources">
     <mkdir dir="${classes.dir}"/>
-   <javac destdir="${classes.dir}" includeantruntime="false" source="11" target="11">
-  <src>
-    <fileset dir="${src.dir}">
-      <include name="**/*.java"/>
-      <exclude name="**/LoginServlet.java"/>
-      <exclude name="**/SignUpServlet.java"/>
-    </fileset>
-  </src>
-</javac>
+    <javac destdir="${classes.dir}" includeantruntime="false" source="11" target="11">
+      <src>
+        <fileset dir="${src.dir}">
+          <include name="**/*.java"/>
+          <exclude name="**/LoginServlet.java"/>
+          <exclude name="**/SignUpServlet.java"/>
+        </fileset>
+      </src>
+    </javac>
   </target>
 
   <!-- Jar: package compiled classes -->
