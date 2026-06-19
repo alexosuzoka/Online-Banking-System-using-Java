@@ -19,13 +19,11 @@
   <target name="compile" description="Compile java sources">
     <mkdir dir="${classes.dir}"/>
     <javac destdir="${classes.dir}" includeantruntime="false" source="11" target="11">
-      <src>
-        <fileset dir="${src.dir}">
-          <include name="**/*.java"/>
-          <exclude name="**/LoginServlet.java"/>
-          <exclude name="**/SignUpServlet.java"/>
-        </fileset>
-      </src>
+      <fileset dir="${src.dir}">
+        <include name="**/*.java"/>
+        <exclude name="**/LoginServlet.java"/>
+        <exclude name="**/SignUpServlet.java"/>
+      </fileset>
     </javac>
   </target>
 
