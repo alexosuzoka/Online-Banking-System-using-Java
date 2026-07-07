@@ -15,7 +15,7 @@ public class DBConnection {
 
     public DBConnection() {
         //URL = "jdbc:odbc:JavaClass";
-        URL ="jdbc:sqlserver://127.0.0.1:1433;databaseName=JavaClass;integratedSecurity=true;";//"user=tang;password=;
+        URL =  "jdbc:sqlserver://localhost:1433;databaseName=YourBankDB;encrypt=false;trustServerCertificate=true;"; //"user=tang;password=;
         connection = null;
 
     }
