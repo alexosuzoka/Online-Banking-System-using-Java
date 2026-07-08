@@ -10,6 +10,7 @@ COPY . .
 
 # Download dependencies in an isolated step to speed up subsequent builds
 RUN mvn dependency:go-offline -B
+RUN mkdir -p target
 
 # Package the application into a .war file, skipping unit tests
 RUN mvn clean package -DskipTests
