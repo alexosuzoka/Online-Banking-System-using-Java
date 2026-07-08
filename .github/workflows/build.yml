@@ -41,9 +41,9 @@ jobs:
 
     - name: Tag/build/save image for Docker Hub
       run: |
-       docker build -t ${{ secrets.USERNAME }}/online-banking-system:latest Online-Banking-System-using-Java/
+       docker build -t ${{ secrets.USERNAME }}/online-banking-system:latest .
        docker push ${{ secrets.USERNAME }}/online-banking-system:latest
-       docker save -o Online-Banking-System-using-Java/target/obs.tar ${{ secrets.USERNAME }}/online-banking-system:latest
+       docker save -o target/obs.tar ${{ secrets.USERNAME }}/online-banking-system:latest
       
    
 
