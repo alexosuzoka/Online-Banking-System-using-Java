@@ -39,15 +39,14 @@ jobs:
        
        logout: true # optional, default is true
 
-    - name: Tag image for Docker Hub
+    - name: Tag/build/save image for Docker Hub
       if: steps.docker_login.conclusion == success()
-      run: docker tag ${{ secrets.USERNAME }}/online-banking-system:latest
+      run: |
+       docker build -t ${{ secrets.USERNAME }}/online-banking-system:latest .
+       docker push ${{ secrets.USERNAME }}/online-banking-system:latest
+       docker save -o Online-Banking-System-using-Java/target/obs.tar ${{ secrets.USERNAME }}/online-banking-system:latest
       
-    - name: Push Images to docker registry
-      run: docker push ${{ secrets.USERNAME }}/online-banking-system:latest
-      
-    - name: Save Image locally 
-      run: docker save -o Online-Banking-System-using-Java/target/obs.tar ${{ secrets.USERNAME }}/online-banking-system:latest
+   
 
     
       
