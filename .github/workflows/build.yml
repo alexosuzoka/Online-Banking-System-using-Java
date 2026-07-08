@@ -43,6 +43,7 @@ jobs:
       run: |
        docker build -t ${{ secrets.USERNAME }}/online-banking-system:latest .
        docker push ${{ secrets.USERNAME }}/online-banking-system:latest
+       mkdir -p target
        docker save -o target/obs.tar ${{ secrets.USERNAME }}/online-banking-system:latest
       
    
